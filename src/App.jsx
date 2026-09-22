@@ -59,7 +59,7 @@ function App() {
       <section className="validator-card" aria-labelledby="page-title">
         <div className="intro">
           <h1 id="page-title">Sudoku Validator</h1>
-          <p className="description">Enter numbers 1–9 and validate the board.</p>
+          <p className="description">Enter numbers 1-9 and validate the board.</p>
         </div>
 
         <div className="board" role="grid" aria-label="Sudoku board">
