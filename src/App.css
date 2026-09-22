@@ -1,0 +1,88 @@
+.app-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+  box-sizing: border-box;
+}
+
+.validator-card {
+  width: min(100%, 650px);
+  padding: clamp(28px, 5vw, 42px) clamp(28px, 6vw, 58px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(27, 49, 87, 0.12);
+  box-shadow: 0 24px 70px rgba(29, 52, 91, 0.14);
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.intro { text-align: center; }
+.eyebrow {
+  margin: 0 0 8px;
+  color: #d05b42;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.description { margin: 0 0 28px; color: #667085; font-size: 15px; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: min(100%, 500px);
+  margin: 0 auto 28px;
+  background: #fff;
+  gap: 4px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: #3a3a3a;
+  color: #fff;
+  font: 500 clamp(18px, 4vw, 25px)/1 'DM Sans', sans-serif;
+  text-align: center;
+  transition: background 150ms ease, box-shadow 150ms ease;
+}
+.cell:focus { outline: 0; background: #4a4a4a; box-shadow: inset 0 0 0 2px #d05b42; }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.validate-button,
+.clear-button {
+  min-width: 132px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font: 700 15px/1 'DM Sans', sans-serif;
+  transition: transform 150ms ease, background 150ms ease;
+}
+.validate-button { border: 0; background: #2563eb; color: #fff; }
+.clear-button {
+    border: 1px solid #e63f3f;
+    background: #e63f3f;
+    color: #ffffff;
+}
+.validate-button:hover { background: #2563eb; transform: translateY(-1px); }
+.clear-button:hover { background: #e63f3f; transform: translateY(-1px); }
+.validate-button:focus-visible,
+.clear-button:focus-visible { outline: 3px solid #d05b42; outline-offset: 3px; }
+.result { margin: 20px 0 0; text-align: center; font-weight: 700; }
+.result.valid { color: #21845a; }
+.result.invalid { color: #c5463c; }
+.result.invalid span { display: inline-block; margin-right: 6px; font-size: 18px; }
+
+@media (max-width: 480px) {
+  .app-shell { padding: 20px 12px; }
+  .validator-card { padding: 28px 16px; }
+  .description { margin-bottom: 22px; }
+  .actions { gap: 8px; }
+  .validate-button, .clear-button { min-width: 0; flex: 1; }
+}
